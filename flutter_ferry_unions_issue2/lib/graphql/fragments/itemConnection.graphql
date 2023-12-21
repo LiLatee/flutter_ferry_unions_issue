@@ -1,0 +1,9 @@
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/itemEdge.graphql'
+
+fragment ItemConnection on ItemConnection {
+  __typename
+  count
+  edges {
+    ...ItemEdge
+  }
+}

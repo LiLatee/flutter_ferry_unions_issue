@@ -1,0 +1,5 @@
+fragment ActivityA on ActivityA {
+  __typename
+  id
+  body
+}

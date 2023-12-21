@@ -1,0 +1,22 @@
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/activityB.graphql'
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/shortActivityA.graphql'
+
+query timelineItems($after: String, $first: Int!) {
+  timelineItems(after: $after, first: $first) {
+    __typename
+    count
+    edges {
+      __typename
+      cursor
+      node {
+        __typename
+        ... on ActivityA {
+          ...ShortActivityA
+        }
+        ... on ActivityB {
+          ...ActivityB
+        }
+      }
+    }
+  }
+}

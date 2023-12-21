@@ -1,0 +1,13 @@
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/egg.graphql'
+
+fragment EggConnection on EggConnection {
+  __typename
+  count
+  edges {
+    __typename
+    cursor
+    node {
+      ...Egg
+    }
+  }
+}

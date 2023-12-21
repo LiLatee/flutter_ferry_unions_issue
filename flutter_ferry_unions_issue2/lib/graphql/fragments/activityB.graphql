@@ -1,0 +1,25 @@
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/itemConnection.graphql'
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/eggConnection.graphql'
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/shortActivityA.graphql'
+# import 'package:flutter_ferry_unions_issue/graphql/fragments/activityBWithoutSharedItem.graphql'
+
+fragment ActivityB on ActivityB {
+  __typename
+  body
+  items(first: 1) {
+    ...ItemConnection
+  }
+  eggs(first: 1) {
+    ...EggConnection
+  }
+  sharedItem {
+    __typename
+    ... on ActivityA {
+      ...ShortActivityA
+    }
+    ## Commenting this fixes the issue.
+    ... on ActivityB {
+      ...ActivityBWithoutSharedItem
+    }
+  }
+}

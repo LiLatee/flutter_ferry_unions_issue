@@ -1,0 +1,4 @@
+fragment ShortActivityData on ActivityData {
+  __typename
+  description
+}
