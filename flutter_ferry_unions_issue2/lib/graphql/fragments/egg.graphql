@@ -1,4 +1,0 @@
-fragment Egg on Egg {
-  __typename
-  id
-}

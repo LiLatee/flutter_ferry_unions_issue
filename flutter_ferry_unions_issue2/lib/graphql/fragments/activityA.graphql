@@ -1,5 +1,6 @@
 fragment ActivityA on ActivityA {
   __typename
-  id
-  body
+  activityData {
+    __typename
+  }
 }

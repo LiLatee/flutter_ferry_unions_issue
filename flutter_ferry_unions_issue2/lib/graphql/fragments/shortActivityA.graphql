@@ -1,9 +1,0 @@
-# import 'package:flutter_ferry_unions_issue/graphql/fragments/shortActivityData.graphql'
-
-fragment ShortActivityA on ActivityA {
-  __typename
-  id
-  activity {
-    ...ShortActivityData
-  }
-}

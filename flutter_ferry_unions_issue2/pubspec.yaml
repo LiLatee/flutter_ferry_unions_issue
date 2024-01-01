@@ -34,6 +34,8 @@ dependency_overrides:
       ref: 253d933f81d1e3ab37519ed86a1c95f8042b6ae7
       url: https://github.com/gql-dart/gql.git
       path: codegen/gql_code_builder
+  # gql_code_builder:
+  #   path: ../../flutter_gql/codegen/gql_code_builder
 
 flutter:
   uses-material-design: true

@@ -2,51 +2,18 @@ schema {
   query: RootQueryType
 }
 
-type ActivityData {
-  description: String
-}
-
-type ActivityA implements Activity {
+type ActivityA {
   body: String!
   id: ID!
-  activity: ActivityData
-}
-
-interface Activity {
-  id: ID!
-}
-
-union TimelineItemable = ActivityA | ActivityB
-
-type TimelineItemConnection {
-  count: Int!
-  edges: [TimelineItemEdge!]!
-}
-
-type TimelineItemEdge {
-  cursor: String
-  node: TimelineItemable!
-}
-
-type Egg {
-  id: ID!
-}
-
-type EggEdge {
-  cursor: String
-  node: Egg!
+  activityData: ActivityUnion
 }
 
 type ActivityB {
-  body: String
   items(after: String, first: Int): ItemConnection!
-  eggs(after: String, first: Int): EggConnection!
-  sharedItem: SharedItem
   activity: ActivityUnion
 }
 
 union ActivityUnion = ActivityA
-union SharedItem = ActivityA | ActivityB
 
 type ItemConnection {
   count: Int!
@@ -59,15 +26,5 @@ type ItemEdge {
 }
 
 type Item {
-  activityB: ActivityB
-  eggs(after: String, first: Int): EggConnection!
-}
-
-type EggConnection {
-  count: Int!
-  edges: [EggEdge!]!
-}
-
-type RootQueryType {
-  timelineItems(after: String, first: Int): TimelineItemConnection!
+  count: Int
 }

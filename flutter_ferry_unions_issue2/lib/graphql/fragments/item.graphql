@@ -1,12 +1,3 @@
-# import 'package:flutter_ferry_unions_issue/graphql/fragments/eggConnection.graphql'
-
 fragment Item on Item {
   __typename
-  activityB {
-    __typename
-    body
-  }
-  eggs(first: 10) {
-    ...EggConnection
-  }
 }
